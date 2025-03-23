@@ -12,13 +12,11 @@ import {
 import { BriefcaseBusiness, Heart } from "lucide-react";
 import logo from "../../assets/dd.png";
 import ProtectedRoute from "../../protectedRoute/protected-route";
-
 import "./navbar.css";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const { user } = useUser();
-
   const isRecruiter = user?.unsafeMetadata?.role === "recruiter";
 
   return (
@@ -47,10 +45,10 @@ const Navbar = () => {
             <a href="#blog">About us</a>
           </p>
 
-          {/* ✅ Protected Routes */}
+          {/* ✅ Updated Navigation Link */}
           <ProtectedRoute>
             <p>
-              <Link to="/job">Find a Job</Link>
+              <Link to="/job-listing">Find a Job</Link>
             </p>
             <p>
               <Link to="/portfolio">Portfolio</Link>
@@ -76,7 +74,6 @@ const Navbar = () => {
               </Link>
             )}
 
-            {/* ✅ Restored My Jobs & Saved Jobs Inside UserButton */}
             <UserButton afterSignOutUrl="/">
               <UserButton.MenuItems>
                 <UserButton.Link
@@ -130,10 +127,9 @@ const Navbar = () => {
                 <a href="#blog">About us</a>
               </p>
 
-              {/* ✅ Protected Links in Mobile Menu */}
               <ProtectedRoute>
                 <p>
-                  <Link to="/job">Find a Job</Link>
+                  <Link to="/job-listing">Find a Job</Link>
                 </p>
                 <p>
                   <Link to="/portfolio">Portfolio</Link>
@@ -158,8 +154,6 @@ const Navbar = () => {
                       </button>
                     </Link>
                   )}
-
-                  {/* ✅ Restored My Jobs & Saved Jobs Inside Mobile User Menu */}
                   <UserButton afterSignOutUrl="/">
                     <UserButton.MenuItems>
                       <UserButton.Link
